@@ -1,22 +1,15 @@
-function makeTransaction(quantity, pricePerDroid, customerCredits) {
-
-    let totalPrice = quantity * pricePerDroid;
-
-    if (totalPrice <= customerCredits) {
-        return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
-    } else {
-        return "Insufficient funds!";
-    }
+function slugify(title) {
+    const lowerslug = title.toLowerCase();
+    const slug = lowerslug.split(" ");
+    return slug.join("-");
 }
 
-makeTransaction(5, 3000, 23000);
-makeTransaction(3, 1000, 15000); 
-makeTransaction(10, 5000, 8000);
-makeTransaction(8, 2000, 10000);
-makeTransaction(10, 500, 5000); 
+slugify("Arrays for beginners");
+slugify("English for developer");
+slugify("Ten secrets of JavaScript");
+slugify("How to become a JUNIOR developer in TWO WEEKS");
 
-console.log(makeTransaction(5, 3000, 23000));
-console.log(makeTransaction(3, 1000, 15000)); 
-console.log(makeTransaction(10, 5000, 8000));
-console.log(makeTransaction(8, 2000, 10000));
-console.log(makeTransaction(10, 500, 5000)); 
+console.log(slugify("Arrays for beginners")); // "arrays-for-beginners"
+console.log(slugify("English for developer")); // "english-for-developer"
+console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
+console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
