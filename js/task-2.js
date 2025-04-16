@@ -4,7 +4,11 @@ function makeArray(firstArray, secondArray, maxLength) {
 
     if (arrayLength >= maxLength) {
       return newArray.slice(0, maxLength);
-    } 
+    } else if (arrayLength < maxLength) {
+      return newArray.slice(0);
+    } else {
+      return newArray;
+    }
 }
 
 makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3);
